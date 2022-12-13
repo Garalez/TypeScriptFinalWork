@@ -1,0 +1,1 @@
+export const Title = () => <h3>Todo App</h3>;
