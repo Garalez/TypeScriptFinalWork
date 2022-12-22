@@ -2,7 +2,7 @@ import { Task } from './../../utils/localStorage';
 import {
   AUTH_REQUEST,
   TASKS_REQUEST,
-} from './userAuthAction';
+} from './userDataAction';
 
 interface InitialState {
   userName: string,
@@ -20,7 +20,7 @@ const initialState: InitialState = {
   userTasks: [],
 };
 
-export const authReducer = (state = initialState, action: UserActions) => {
+export const userDataReducer = (state = initialState, action: UserActions) => {
   switch (action.type) {
     case AUTH_REQUEST:
       return {

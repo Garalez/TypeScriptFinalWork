@@ -9,7 +9,7 @@ export const getStorage = (key: string) => {
   return dataFromStorage === null ? [] : dataFromStorage;
 };
 
-export const setStorage = (key: string, obj: Task | []) => {
+export const setStorage = (key: string, obj: Task | [] | Task[]) => {
   const getData = getStorage(key);
   if (Array.isArray(obj)) {
     getData.splice(0, getData.length, ...obj);

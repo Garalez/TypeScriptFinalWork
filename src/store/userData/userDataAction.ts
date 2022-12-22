@@ -15,7 +15,7 @@ export const userTasksRequestAction = (userTasks: []) => ({
 });
 
 
-export const userNameRequest = (userName: string) => (dispatch: AppDispatch) => {
+export const userDataRequest = (userName: string) => (dispatch: AppDispatch) => {
   dispatch(userNameRequestAction(userName));
   const userTasks = getStorage(userName);
   dispatch(userTasksRequestAction(userTasks));

@@ -6,7 +6,7 @@ export const TableBody = () => {
 
   return (
     <tbody>
-      {userTasks.map((task) => <TasksRender key={task.taskId} taskData={task} />)}
+      {userTasks.map((task, index) => <TasksRender key={task.taskId} taskData={task} index={index} />)}
     </tbody>
   )
 }

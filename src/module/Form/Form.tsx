@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { userNameRequest } from '../../store/userAuth/userAuthAction';
+import { userDataRequest } from '../../store/userData/userDataAction';
 import { setStorage } from '../../utils/localStorage';
 import { Task } from '../../utils/localStorage';
 
@@ -18,7 +18,7 @@ export const Form = () => {
       completion: false,
     };
     setStorage(userName, taskData);
-    dispatch(userNameRequest(userName));
+    dispatch(userDataRequest(userName));
     setTaskName('');
     setIsBtnDisabled(true);
   };
@@ -32,7 +32,7 @@ export const Form = () => {
 
   const handlerClear = () => {
     setStorage(userName, []);
-    dispatch(userNameRequest(userName));
+    dispatch(userDataRequest(userName));
   };
 
   return (
