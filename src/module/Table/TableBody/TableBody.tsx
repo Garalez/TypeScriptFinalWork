@@ -1,37 +1,12 @@
+import { useAppSelector } from "../../../hooks";
+import { TasksRender } from "./TasksRender/TasksRender";
+
 export const TableBody = () => {
+  const userTasks = useAppSelector((state) => state.userData.userTasks);
+
   return (
     <tbody>
-          <tr className="table-light">
-            <td>1</td>
-            <td className="task">
-              Купить слона
-            </td>
-            <td>В процессе</td>
-            <td>
-              <button className="btn btn-danger">
-                Удалить
-              </button>
-              <button className="btn btn-success">
-                Завершить
-              </button>
-            </td>
-          </tr>
-
-          <tr className="table-success">
-            <td>2</td>
-            <td className="text-decoration-line-through">
-              Помыть кота
-            </td>
-            <td>Выполнена</td>
-            <td>
-              <button className="btn btn-danger">
-                Удалить
-              </button>
-              <button className="btn btn-success">
-                Завершить
-              </button>
-            </td>
-          </tr>
-        </tbody>
+      {userTasks.map((task) => <TasksRender key={task.taskId} taskData={task} />)}
+    </tbody>
   )
 }
